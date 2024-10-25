@@ -157,7 +157,7 @@ class AlienInvasion:
         # 计算屏幕可容纳多少行外星人
         ship_height = self.ship.rect.height
         available_space_y = (
-            self.settings.screen_height - (3 * alien_height) - ship_height
+            self.settings.screen_height - (4 * alien_height) - ship_height
             )
         number_rows = available_space_y // (2 * alien_height)
 
@@ -172,7 +172,7 @@ class AlienInvasion:
         alien_width, alien_height = alien.rect.size
         alien.x = alien_width + 2 * alien_width * alien_number
         alien.rect.x = alien.x
-        alien.rect.y = alien_height + 2 * alien_height * row_number
+        alien.rect.y = alien_height * 2 + 2 * alien_height * row_number
         self.aliens.add(alien)
 
     def _check_fleet_edges(self):
@@ -202,6 +202,9 @@ class AlienInvasion:
         self.settings.initialize_difficulty()
         self.stats.reset_stats()
         self.stats.game_active = True
+        self.sb.prep_score()
+        self.sb.prep_level()
+        self.sb.prep_ships()
 
         # 清空余下的子弹和外星人
         self.aliens.empty()
@@ -262,14 +265,20 @@ class AlienInvasion:
         )
 
         if collisions:
-            self.stats.score += self.settings.alien_points
+            for aliens in collisions.values():
+                self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
 
         if not self.aliens:
             # 删除现有的子弹并新建一群外星人
             self.bullets.empty()
             self._create_fleet()
             self.settings.increase_speed()
+
+            # 提高等级
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _check_aliens_bottom(self):
         """检查是否有外星人到达了屏幕底部"""
@@ -298,8 +307,9 @@ class AlienInvasion:
         """响应飞船被外星人撞到"""
 
         if self.stats.ships_left > 0:
-            # 将 ships_left 减 1
+            # 将 ships_left 减 1 并更新记分牌
             self.stats.ships_left -= 1
+            self.sb.prep_ships()
 
             # 清空余下的外星人和子弹
             self.aliens.empty()

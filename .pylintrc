@@ -1,2 +1,2 @@
 [MESSAGES CONTROL]
-disable = no-member, missing-docstring, too-few-public-methods, too-many-instance-attributes, unused-variable
+disable = no-member, missing-docstring, too-few-public-methods, too-many-instance-attributes, unused-variable, invalid-name

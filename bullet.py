@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pygame
 from pygame.sprite import Sprite
 
@@ -7,7 +9,7 @@ from type_hints import AlienInvasion
 class Bullet(Sprite):
     """管理飞船所发射子弹的类"""
 
-    def __init__(self, ai_game: AlienInvasion):
+    def __init__(self, ai_game: 'AlienInvasion'):
         """在飞船当前位置创建一个子弹对象"""
         super().__init__()
         self.screen = ai_game.screen

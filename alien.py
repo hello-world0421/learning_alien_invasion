@@ -1,11 +1,10 @@
-from typing import TYPE_CHECKING
+from __future__ import annotations
 
 import pygame
 from pygame.sprite import Sprite
 
+from type_hints import AlienInvasion
 
-if TYPE_CHECKING:
-    from alien_invasion import AlienInvasion
 
 class Alien(Sprite):
     """表示一个外星人的类"""

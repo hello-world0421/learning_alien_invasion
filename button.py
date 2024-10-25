@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import pygame.font
 
 from type_hints import AlienInvasion
@@ -5,7 +7,7 @@ from type_hints import AlienInvasion
 
 class Button():
 
-    def __init__(self, ai_game: AlienInvasion, msg: str):
+    def __init__(self, ai_game: 'AlienInvasion', msg: str):
         """初始化按钮的属性"""
         self.msg = msg
         self.screen = ai_game.screen

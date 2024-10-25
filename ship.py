@@ -1,13 +1,17 @@
+from __future__ import annotations
+
 import pygame
+from pygame.sprite import Sprite
 
 from type_hints import AlienInvasion
 
 
-class Ship:
+class Ship(Sprite):
     """管理飞船的类"""
 
-    def __init__(self, ai_game: AlienInvasion):
+    def __init__(self, ai_game: 'AlienInvasion'):
         """初始化飞船并设置其初始位置"""
+        super().__init__()
         self.screen = ai_game.screen
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
@@ -22,7 +26,7 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
 
-    def update(self):
+    def update(self, *args, **kwargs):
         """根据移动标志调整飞船位置"""
         if self.moving_right and self.rect.right < self.screen_rect.right:
             self.x += self.settings.ship_speed
