@@ -1,4 +1,4 @@
-# Alien Invasion# Alien Invasion Game
+# Alien Invasion Game
 
 ## 项目概述
 
