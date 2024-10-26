@@ -55,21 +55,33 @@ class Settings:
 
     def initialize_difficulty(self):
         """初始化游戏难度"""
-        if self.difficulty == 'easy':
-            self.ship_speed = 3.0
-            self.bullet_speed = 3.0
-            self.alien_speed = 0.1
-            self.alien_points = 50
-        elif self.difficulty == 'medium':
-            self.ship_speed = 2.0
-            self.bullet_speed = 4.0
-            self.alien_speed = 0.2
-            self.alien_points = 75
-        elif self.difficulty == 'hard':
-            self.ship_speed = 1.0
-            self.bullet_speed = 5.0
-            self.alien_speed = 2
-            self.alien_points = 100
+        difficulty_settings = {
+            'easy': {
+                'ship_speed': 3.0,
+                'bullet_speed': 3.0,
+                'alien_speed': 0.1,
+                'alien_points': 50
+            },
+            'medium': {
+                'ship_speed': 2.0,
+                'bullet_speed': 4.0,
+                'alien_speed': 0.2,
+                'alien_points': 75
+            },
+            'hard': {
+                'ship_speed': 1.0,
+                'bullet_speed': 5.0,
+                'alien_speed': 0.3,
+                'alien_points': 100
+            }
+        }
+
+        settings = difficulty_settings[self.difficulty]
+
+        self.ship_speed = settings['ship_speed']
+        self.bullet_speed = settings['bullet_speed']
+        self.alien_speed = settings['alien_speed']
+        self.alien_points = settings['alien_points']
 
     def increase_speed(self):
         """提高速度设置"""

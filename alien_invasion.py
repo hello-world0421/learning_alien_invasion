@@ -45,11 +45,7 @@ class AlienInvasion:
         self.play_button = Button(self, "Play")
 
         # 创建难度按钮
-        self.difficulty_buttons = {
-            'easy': DifficultyButton(self, "Easy", 'easy', 70),
-            'medium': DifficultyButton(self, "Midium", 'medium', 140),
-            'hard': DifficultyButton(self, "Hard", 'hard', 210),
-        }
+        self._create_difficulty_buttons()
 
         # 设置默认难度
         self.difficulty_buttons[self.settings.difficulty].select()
@@ -144,6 +140,15 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+
+    def _create_difficulty_buttons(self):
+        """创建难度按钮"""
+        button_y_offset = 70
+        return {
+            'easy': DifficultyButton(self, "Easy", 'easy', button_y_offset),
+            'medium': DifficultyButton(self, "Midium", 'medium', button_y_offset * 2),
+            'hard': DifficultyButton(self, "Hard", 'hard', button_y_offset * 3),
+        }
 
     def _create_fleet(self):
         """创建外星人群"""
