@@ -17,7 +17,7 @@ class Ship(Sprite):
         self.screen_rect = ai_game.screen.get_rect()
 
         # 加载飞机图像并获取其外接矩形
-        self.image = pygame.image.load(r'images/ship.bmp')
+        self.image = pygame.image.load(r'data/images/ship.bmp')
         self.rect = self.image.get_rect()
 
         self.center_ship()

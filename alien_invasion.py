@@ -192,6 +192,7 @@ class AlienInvasion:
 
     def _exit_game(self):
         """退出游戏"""
+        self.stats.save_highest_score()
         pygame.quit()
         sys.exit()
 
