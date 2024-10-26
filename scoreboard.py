@@ -19,6 +19,7 @@ class Scoreboard:
         self.stats = ai_game.stats
 
         # 外部定义的变量
+        self.ships: 'Group[Ship]'
         self.score_image: 'Surface'
         self.high_score_image: 'Surface'
         self.level_image: 'Surface'
@@ -30,6 +31,10 @@ class Scoreboard:
         self.text_color = (30, 30, 30)
         self.font = pygame.font.SysFont(None, 48)
         # 准备包含最高得分、当前得分和等级的图像
+        self.prep_images()
+
+    def prep_images(self):
+        """准备包含最高得分、当前得分和等级的图像"""
         self.prep_score()
         self.prep_high_score()
         self.prep_level()

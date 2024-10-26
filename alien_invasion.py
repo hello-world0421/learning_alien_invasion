@@ -203,9 +203,7 @@ class AlienInvasion:
         self.settings.initialize_difficulty()
         self.stats.reset_stats()
         self.stats.game_active = True
-        self.sb.prep_score()
-        self.sb.prep_level()
-        self.sb.prep_ships()
+        self.sb.prep_images()
 
         # 清空余下的子弹和外星人
         self.aliens.empty()
@@ -272,14 +270,19 @@ class AlienInvasion:
             self.sb.check_high_score()
 
         if not self.aliens:
-            # 删除现有的子弹并新建一群外星人
-            self.bullets.empty()
-            self._create_fleet()
-            self.settings.increase_speed()
+            # 外星人群为空时，开始新的一轮
+            self._start_new_level()
 
-            # 提高等级
-            self.stats.level += 1
-            self.sb.prep_level()
+    def _start_new_level(self):
+        """开始新的等级"""
+        # 删除现有的子弹并新建一群外星人
+        self.bullets.empty()
+        self._create_fleet()
+        self.settings.increase_speed()
+
+        # 提高等级
+        self.stats.level += 1
+        self.sb.prep_level()
 
     def _check_aliens_bottom(self):
         """检查是否有外星人到达了屏幕底部"""
