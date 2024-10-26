@@ -22,7 +22,7 @@ class GameStats:
     def load_highest_score(self) -> int:
         """从文件中读取最高得分"""
         try:
-            with open(r'data/json/highest_score.json', 'r', encoding='utf-8') as f:
+            with open(r'resources/json/highest_score.json', 'r', encoding='utf-8') as f:
                 stats = json.load(f)
                 return stats['highest_score']
         except (FileNotFoundError, json.JSONDecodeError):
@@ -30,7 +30,7 @@ class GameStats:
 
     def save_highest_score(self):
         """将最高得分保存到文件"""
-        with open(r'data/json/highest_score.json', 'w', encoding='utf-8') as f:
+        with open(r'resources/json/highest_score.json', 'w', encoding='utf-8') as f:
             stats = {
                 'highest_score': self.highest_score
             }

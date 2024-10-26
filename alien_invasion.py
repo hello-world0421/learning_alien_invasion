@@ -45,7 +45,7 @@ class AlienInvasion:
         self.play_button = Button(self, "Play")
 
         # 创建难度按钮
-        self._create_difficulty_buttons()
+        self.difficulty_buttons = self._create_difficulty_buttons()
 
         # 设置默认难度
         self.difficulty_buttons[self.settings.difficulty].select()
