@@ -10,7 +10,7 @@ class Alien(Sprite):
     """表示一个外星人的类"""
 
     def __init__(self, ai_game: 'AlienInvasion'):
-        super().__init__()
+        super(Alien, self).__init__()
         self.screen = ai_game.screen
         self.settings = ai_game.settings
 
@@ -35,4 +35,4 @@ class Alien(Sprite):
     def update(self, *args, **kwargs):
         """向右移动外星人"""
         self.x += (self.settings.alien_speed * self.settings.fleet_direction)
-        self.rect.x = self.x
+        self.rect.x = int(self.x)
