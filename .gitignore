@@ -22,18 +22,6 @@ build/
 *.egg
 *.log
 *.pot
-*.pyc
-*.pyo
-*.mo
-*.so
-*.orig
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.pot
-*.mo
-*.so
 *.orig
 
 # Jupyter Notebook
@@ -46,20 +34,11 @@ venv/
 
 # 测试输出
 *.test
-*.log
 *.out
 *.err
 *.gcov
 *.coverage
 *.cover
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.pot
-*.mo
-*.so
-*.orig
 
 # 缓存文件
 *.cache
@@ -69,25 +48,12 @@ venv/
 *.swn
 *.bak
 *.old
-*.orig
 *.rej
-
-# 日志文件
-*.log
 
 # IDE 和编辑器
 *.idea/
 *.iml
 *.ipynb_checkpoints/
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.pot
-*.mo
-*.so
-*.orig
-
 # 其他
 Thumbs.db
 .DS_Store
@@ -95,7 +61,6 @@ Thumbs.db
 *.sublime-workspace
 *.suo
 *.sln
-*.swp
 *.lock
 *.jsonc
 *.tgz
@@ -106,10 +71,6 @@ Thumbs.db
 *.xz
 *.7z
 *.rar
-*.jar
-*.war
-*.ear
-*.class
 *.jar
 *.war
 *.ear
@@ -125,94 +86,9 @@ yarn-error.log*
 Dockerfile
 docker-compose.yml
 
-# C/C++
-*.o
-*.a
-*.lib
-*.so
-*.dylib
-*.dll
-*.obj
-*.pdb
-*.ilk
-*.exp
-*.lib
-*.res
-*.sbr
-*.idb
-*.pch
-*.ncb
-*.sdf
-*.tlog
-*.lastbuildstate
-*.user
-*.suo
-*.vcxproj.*
-*.filters
-*.props
-*.targets
-*.vspscc
-*.vssscc
-*.sln.docstates
-
-# Go
-*.a
-*.o
-*.h
-*.hi
-*.prof
-*.test
-*.out
-*.log
-*.err
-*.gcov
-*.coverage
-*.cover
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.pot
-*.mo
-*.so
-*.orig
-
 # Rust
 target/
 Cargo.lock
-
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.log
-*.pyc
-*.pyo
-*.pyd
-*.log
-*.pot
-*.mo
-*.so
-*.orig
-
-# C#
-bin/
-obj/
-*.user
-*.userosscache
-*.suo
-*.sln.docstates
-*.sln.cache
-*.csproj.user
-*.resharper.user
-*.resharper
-*.sln.DotSettings.user
-*.sln.DotSettings
-
-# Kotlin
-*.class
-*.kotlin_module
 
 # Swift
 *.swiftdoc
@@ -224,24 +100,6 @@ obj/
 
 # Markdown
 *.md.swp
-
-# LaTeX
-*.aux
-*.bbl
-*.blg
-*.idx
-*.ilg
-*.ind
-*.log
-*.out
-*.toc
-*.nav
-*.snm
-*.vrb
-*.synctex.gz
-*.pdf
-*.ps
-*.dvi
 
 # Flutter
 .build
@@ -275,46 +133,7 @@ Assets/Fonts/
 Assets/Animations/
 Assets/Audio/
 Assets/Video/
-Assets/Fonts/
 Assets/Localization/
-Assets/Scenes/
-Assets/Shaders/
-Assets/Sprites/
-Assets/UI/
-Assets/WebGLTemplates/
-Assets/Editor/
-Assets/TestResults/
-Assets/Builds/
-Assets/Cache/
-Assets/Temp/
-Assets/Logs/
-Assets/Backup/
-Assets/Export/
-Assets/Import/
-Assets/Generated/
-Assets/External/
-Assets/ThirdParty/
-Assets/Plugins/
-Assets/StreamingAssets/
-Assets/Resources/
-Assets/Scenes/
-Assets/Prefabs/
-Assets/Materials/
-Assets/Textures/
-Assets/Models/
-Assets/Scripts/
-Assets/Standard Assets/
-Assets/Pro Standard Assets/
-Assets/Editor Default Resources/
-Assets/GUI/
-Assets/Icons/
-Assets/Fonts/
-Assets/Animations/
-Assets/Audio/
-Assets/Video/
-Assets/Fonts/
-Assets/Localization/
-Assets/Scenes/
 Assets/Shaders/
 Assets/Sprites/
 Assets/UI/
